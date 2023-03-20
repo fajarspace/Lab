@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const AddJadwal = () => {
   const [kelas, setKelas] = useState("");
@@ -30,6 +31,8 @@ const AddJadwal = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <section className="container-fluid">
     <form onSubmit={saveJadwal}>
       <div className="grid">
@@ -142,6 +145,7 @@ const AddJadwal = () => {
       </div>
     </form>
 </section>
+</>
   );
 };
 
