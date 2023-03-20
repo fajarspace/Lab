@@ -27,7 +27,7 @@ const Home = () => {
     <>
     <section>
       <div className="container-fluid">
-        <Link to={'/dashboard'}>dashboard</Link>
+        <Link to={'/dashboard'}> <u> dashboard</u></Link>
         <table className="table is-striped is-fullwidth">
           <thead>
             <tr>
