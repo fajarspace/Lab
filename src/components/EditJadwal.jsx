@@ -93,7 +93,7 @@ const EditJadwal = () => {
                 <option value="09:30 - 11:30">09:30 - 11:30</option>
                 <option value="13:00 - 15:00">13:00 - 15:00</option>
                 <option value="15:30 - 17:30">15:30 - 17:30</option>
-                <option value="18:30 - 20:00">18:30 - 20:00</option>
+                <option value="18:30 - 20:00">18:00 - 20:00</option>
                 <option value="20:00 - 22:00">20:00 - 22:00</option>
 
               </select>
