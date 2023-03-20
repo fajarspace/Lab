@@ -41,7 +41,7 @@ const AddJadwal = () => {
           <option value="TI.20.A.1">TI.20.A.1</option>
           <option value="TI.20.A.2">TI.20.A.2</option>
           <option value="TI.20.A.3">TI.20.A.3</option>
-          <option value="TI.20.A.3">TI.20.B.1</option>
+          <option value="TI.20.B.1">TI.20.B.1</option>
           <option value="TI.20.B.2">TI.20.B.2</option>
           <option value="TI.20.C.1">TI.20.C.1</option>
           <option value="TI.20.D.1">TI.20.D.1</option>
