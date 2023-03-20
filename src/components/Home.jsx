@@ -24,9 +24,10 @@ const Home = () => {
   // };
 
   return (
+    <>
     <section>
       <div className="container-fluid">
-        <Link to={/dashboard}></Link>
+        <Link to={'/dashboard'}>dashboard</Link>
         <table className="table is-striped is-fullwidth">
           <thead>
             <tr>
@@ -55,6 +56,7 @@ const Home = () => {
         </table>
       </div>
     </section>
+    </>
   );
 };
 
