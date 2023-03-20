@@ -32,7 +32,7 @@ const Home = () => {
     <>
     <section>
       <div className="container-fluid">
-        <a href={'/dashboard'}> <u> dashboard</u></a>
+        <a href='/dashboard'> <u> dashboard</u></a>
         {/* <Link to={'/login'}> <u> login</u></Link>
         <Link to={'/test'}> <u> test</u></Link> */}
         <table className="table is-striped is-fullwidth">
