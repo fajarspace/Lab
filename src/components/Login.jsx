@@ -1,50 +1,45 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
-async function loginUser(credentials) {
- return fetch('http://localhost:4000/login', {
-   method: 'POST',
-   headers: {
-     'Content-Type': 'application/json'
-   },
-   body: JSON.stringify(credentials)
- })
-   .then(data => data.json())
-}
+const Login = () => {
+	const [authenticated, setauthenticated] = useState(null);
+useEffect(() => {
+    const loggedInUser = localStorage.getItem(authenticated);
+    if (loggedInUser) {
+    setauthenticated(loggedInUser);
+    }
+}, []);
+	const navigate = useNavigate();
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
 
-export default function Login({ setToken }) {
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
-    });
-    setToken(token);
-  }
-
-  return(
-    <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <p>Username</p>
-          <input type="text" onChange={e => setUserName(e.target.value)} />
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" onChange={e => setPassword(e.target.value)} />
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
-  )
-}
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
+	const users = [{ username: "Jane", password: "testpassword" }];
+	const handleSubmit = (e) => {
+	e.preventDefault();
+	const account = users.find((user) => user.username === username);
+	if (account && account.password === password) {
+		localStorage.setItem(authenticated, true);
+		navigate("/test");
+	}
+	};
+	return (
+	<div>
+		<form onSubmit={handleSubmit}>
+ <input
+ type="text"
+ name="Username"
+ value={username}
+ onChange={(e) => setUsername(e.target.value)}
+ />
+ <input
+ type="password"
+ name="Password"
+ onChange={(e) => setPassword(e.target.value)}
+ />
+ <input type="submit" value="Submit" />
+ </form>
+	</div>
+	);
 };
+
+export default Login;
