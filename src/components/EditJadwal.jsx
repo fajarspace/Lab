@@ -28,7 +28,7 @@ const EditJadwal = () => {
         asisten1,
         asisten2
       });
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
