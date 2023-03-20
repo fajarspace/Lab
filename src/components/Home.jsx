@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Home = () => {
   const [jadwal, setJadwal] = useState([]);
@@ -27,7 +27,7 @@ const Home = () => {
     <>
     <section>
       <div className="container-fluid">
-        <Link to={'/dashboard'}> <u> dashboard</u></Link>
+        {/* <Link to={'/dashboard'}> <u> dashboard</u></Link> */}
         {/* <Link to={'/login'}> <u> login</u></Link>
         <Link to={'/test'}> <u> test</u></Link> */}
         <table className="table is-striped is-fullwidth">
