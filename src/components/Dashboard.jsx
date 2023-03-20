@@ -11,13 +11,13 @@ const dashboard = () => {
   }, []);
 
   const getJadwal = async () => {
-    const response = await axios.get("http://localhost:4000/jadwal");
+    const response = await axios.get("https://labti.up.railway.app/jadwal");
     setJadwal(response.data);
   };
 
   const deleteJadwal = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/jadwal/${id}`);
+      await axios.delete(`https://labti.up.railway.app/jadwal/${id}`);
       getJadwal();
     } catch (error) {
       console.log(error);

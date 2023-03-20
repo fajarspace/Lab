@@ -15,7 +15,7 @@ const AddJadwal = () => {
   const saveJadwal = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/jadwal", {
+      await axios.post("https://labti.up.railway.app/jadwal", {
         kelas,
         hari,
         waktu,
