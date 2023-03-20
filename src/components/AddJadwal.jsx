@@ -100,7 +100,7 @@ const AddJadwal = () => {
           <option value="M. Najamuddin Dwi Miharja, S.Kom., M.Kom.">M. Najamuddin Dwi Miharja, S.Kom., M.Kom.</option>
           <option value="Donny Maulana, S.Kom., M.M.Si.">Donny Maulana, S.Kom., M.M.Si.</option>
           <option value="Aswan S. Sunge, S.E., M.Kom.">Aswan S. Sunge, S.E., M.Kom.</option>
-          <option value="DR Ananto">DR Ananto</option>
+          <option value="DR Ananato., ST., M.Sc.">DR Ananato., ST., M.Sc.</option>
 
         </select>
         </div>
