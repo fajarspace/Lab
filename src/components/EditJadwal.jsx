@@ -20,7 +20,7 @@ const EditJadwal = () => {
     
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/jadwal/${id}`, {
+      await axios.patch(`http://localhost:4000/jadwal/${id}`, {
         kelas,
         hari,
         waktu,
@@ -35,7 +35,7 @@ const EditJadwal = () => {
   };
 
   const getJadwalById = async () => {
-    const response = await axios.get(`http://localhost:5000/jadwal/${id}`);
+    const response = await axios.get(`http://localhost:4000/jadwal/${id}`);
     setKelas(response.data.kelas);
     setHari(response.data.hari);
     setWaktu(response.data.waktu);
