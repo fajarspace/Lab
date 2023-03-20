@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
-const ListJadwal = () => {
+const dashboard = () => {
   const [jadwal, setJadwal] = useState([]);
 
   useEffect(() => {
@@ -26,9 +27,7 @@ const ListJadwal = () => {
   return (
     <div className="columns mt-5 is-centered">
       <div className="column is-half">
-        <Link to={`add`} className="button is-success">
-          Add New
-        </Link>
+        <Navbar/>
         <table className="table is-striped is-fullwidth">
           <thead>
             <tr>
@@ -46,7 +45,7 @@ const ListJadwal = () => {
             {jadwal.map((jadwal, index) => (
               <tr key={jadwal.id}>
                 <td>{index + 1}</td>
-                <td>{jadwal.dosen}</td>
+                <td>{jadwal.kelas}</td>
                 <td>{jadwal.hari}</td>
                 <td>{jadwal.waktu}</td>
                 <td>{jadwal.dosen}</td>
@@ -54,17 +53,17 @@ const ListJadwal = () => {
                 <td>{jadwal.asisten2}</td>
                 <td>
                   <Link
-                    to={`edit/${jadwal.id}`}
+                    to={`jadwal/edit/${jadwal.id}`}
                     className="button is-small is-info mr-2"
                   >
-                    Edit
+                    <kbd style={{"backgroundColor":'yellow', "color":"black"}}>Edit</kbd>
                   </Link>
-                  <button
+                  <br />
+                  <Link
                     onClick={() => deleteJadwal(jadwal.id)}
-                    className="button is-small is-danger"
                   >
-                    Delete
-                  </button>
+                    <kbd style={{"backgroundColor":'red'}}>Hapus</kbd>
+                  </Link>
                 </td>
               </tr>
             ))}
@@ -75,4 +74,4 @@ const ListJadwal = () => {
   );
 };
 
-export default ListJadwal;
+export default dashboard;

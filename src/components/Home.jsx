@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Home = () => {
   const [jadwal, setJadwal] = useState([]);
@@ -24,14 +24,9 @@ const Home = () => {
   // };
 
   return (
-    <div className="columns mt-5 is-centered">
-      <div className="column is-half">
-        <Link to={`add`} className="button is-success">
-          Add New
-        </Link>
-        <Link to={`jadwal`} className="button is-success">
-          jadwal
-        </Link>
+    <section>
+      <div className="container-fluid">
+
         <table className="table is-striped is-fullwidth">
           <thead>
             <tr>
@@ -48,7 +43,7 @@ const Home = () => {
             {jadwal.map((jadwal, index) => (
               <tr key={jadwal.id}>
                 <td>{index + 1}</td>
-                <td>{jadwal.dosen}</td>
+                <td>{jadwal.kelas}</td>
                 <td>{jadwal.hari}</td>
                 <td>{jadwal.waktu}</td>
                 <td>{jadwal.dosen}</td>
@@ -59,7 +54,7 @@ const Home = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 };
 

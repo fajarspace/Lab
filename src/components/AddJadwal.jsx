@@ -23,106 +23,125 @@ const AddJadwal = () => {
         asisten1,
         asisten2
       });
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="columns mt-5 is-centered">
-      <div className="column is-half">
-        <form onSubmit={saveJadwal}>
-          <div className="field">
-            <label className="label">Kelas</label>
-            <div className="control">
-              <input
-                type="text"
-                className="input"
-                value={kelas}
-                onChange={(e) => setKelas(e.target.value)}
-                placeholder="kelas"
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Hari</label>
-            <div className="control">
-              <input
-                type="text"
-                className="input"
-                value={hari}
-                onChange={(e) => setHari(e.target.value)}
-                placeholder="Hari"
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Waktu</label>
-            <div className="control">
-              <div className="select is-fullwidth">
-                {/* <select
-                  value={waktu}
-                  onChange={(e) => setWaktu(e.target.value)}
-                >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select> */}
-                <input
-                type="text"
-                className="input"
-                value={waktu}
-                onChange={(e) => setWaktu(e.target.value)}
-                placeholder="Waktu"
-              />
-              </div>
-            </div>
-          </div>
-          
-          <div className="field">
-            <label className="label">Dosen</label>
-            <div className="control">
-              <input
-                type="text"
-                className="input"
-                value={dosen}
-                onChange={(e) => setDosen(e.target.value)}
-                placeholder="Dosen"
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Asisten Lab</label>
-            <div className="control">
-              <input
-                type="text"
-                className="input"
-                value={asisten1}
-                onChange={(e) => setAsisten1(e.target.value)}
-                placeholder="Asisten 1"
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Asisten Lab</label>
-            <div className="control">
-              <input
-                type="text"
-                className="input"
-                value={asisten2}
-                onChange={(e) => setAsisten2(e.target.value)}
-                placeholder="Asisten 2"
-              />
-            </div>
-          </div>
-          <div className="field">
-            <button type="submit" className="button is-success">
-              Save
-            </button>
-          </div>
-        </form>
+    <section className="container-fluid">
+    <form onSubmit={saveJadwal}>
+      <div className="grid">
+    <main>
+    <div className="field">
+        <label className="label">Kelas</label>
+        <select value={kelas} onChange={(e) => setKelas(e.target.value)}>
+          <option value="">Pilih Kelas</option>
+          <option value="TI.20.A.1">TI.20.A.1</option>
+          <option value="TI.20.A.2">TI.20.A.2</option>
+          <option value="TI.20.A.3">TI.20.A.3</option>
+          <option value="TI.20.A.3">TI.20.B.1</option>
+          <option value="TI.20.B.2">TI.20.B.2</option>
+          <option value="TI.20.C.1">TI.20.C.1</option>
+          <option value="TI.20.D.1">TI.20.D.1</option>
+          <option value="TI.20.D.2">TI.20.D.2</option>
+          <option value="TI.20.D.3">TI.20.D.3</option>
+          <option value="TI.20.D.4">TI.20.D.4</option>
+          <option value="TI.20.E.1">TI.20.E.1</option>
+          <option value="TI.20.F.1">TI.20.F.1</option>
+        </select>
       </div>
-    </div>
+      <div className="field">
+        <label className="label">Hari</label>
+        <div className="control">
+        <select value={hari} onChange={(e) => setHari(e.target.value)}>
+        <option value="">Pilih Hari</option>
+          <option value="Senin">Senin</option>
+          <option value="Selasa">Selasa</option>
+          <option value="Rabu">Rabu</option>
+          <option value="Kamis">Kamis</option>
+          <option value="Jumat">Jumat</option>
+          <option value="Sabtu">Sabtu</option>
+          <option value="Minggu">Minggu</option>
+
+        </select>
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Waktu</label>
+        <div className="control">
+          <div className="select is-fullwidth">
+          <select value={waktu} onChange={(e) => setWaktu(e.target.value)}>
+          <option value="">Pilih Waktu</option>
+            <option value="07:30 - 09:30">07:30 - 09:30</option>
+            <option value="09:30 - 11:30">09:30 - 11:30</option>
+            <option value="13:00 - 15:00">13:00 - 15:00</option>
+            <option value="15:30 - 17:30">15:30 - 17:30</option>
+            <option value="18:30 - 20:00">18:30 - 20:00</option>
+            <option value="20:00 - 22:00">20:00 - 22:00</option>
+
+          </select>
+          </div>
+        </div>
+      </div>
+      </main>
+      <main>
+      <div className="field">
+        <label className="label">Dosen</label>
+        <div className="control">
+        <select value={dosen} onChange={(e) => setDosen(e.target.value)}>
+          <option value="">Pilih dosen</option>
+          <option value="Wahyu Hadikristanto, S.Kom., M.Kom.">Wahyu Hadikristanto, S.Kom., M.Kom.</option>
+          <option value="Muhammad Fatchan, S.Kom., M.Kom.">Muhammad Fatchan, S.Kom., M.Kom.</option>
+          <option value="Suherman, S.Kom., M.Kom.">Suherman, S.Kom., M.Kom.</option>
+          <option value="Eko Budiarto, S.Kom., M.Kom.">Eko Budiarto, S.Kom., M.Kom.</option>
+          <option value="Agung Nugroho, S.Kom., M.Kom.">Agung Nugroho, S.Kom., M.Kom.</option>
+          <option value="M. Najamuddin Dwi Miharja, S.Kom., M.Kom.">M. Najamuddin Dwi Miharja, S.Kom., M.Kom.</option>
+          <option value="Donny Maulana, S.Kom., M.M.Si.">Donny Maulana, S.Kom., M.M.Si.</option>
+          <option value="Aswan S. Sunge, S.E., M.Kom.">Aswan S. Sunge, S.E., M.Kom.</option>
+          <option value="DR Ananto">DR Ananto</option>
+
+        </select>
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Asisten Lab</label>
+        <div className="control">
+        <select value={asisten1} onChange={(e) => setAsisten1(e.target.value)}>
+        <option value="">Pilih Asisten 1</option>
+          <option value="Veno">Veno</option>
+          <option value="Fajar Agung">Fajar Agung</option>
+          <option value="Maulana Hasan">Maulana Hasan</option>
+          <option value="M. Romdhon">M. Romdhon</option>
+          <option value="Sultan Aditya">Sultan Aditya</option>
+
+        </select>
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Asisten Lab</label>
+        <div className="control">
+        <select value={asisten2} onChange={(e) => setAsisten2(e.target.value)}>
+        <option value="">Pilih Asisten 2</option>
+          <option value="Veno">Veno</option>
+          <option value="Fajar Agung">Fajar Agung</option>
+          <option value="Maulana Hasan">Maulana Hasan</option>
+          <option value="M. Romdhon">M. Romdhon</option>
+          <option value="Sultan Aditya">Sultan Aditya</option>
+
+        </select>
+        </div>
+      </div>
+      </main>
+      </div>
+      <div className="field">
+        <button type="submit" className="button is-success">
+          Tambah jadwal
+        </button>
+      </div>
+    </form>
+</section>
   );
 };
 
