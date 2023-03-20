@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [jadwal, setJadwal] = useState([]);
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <section>
       <div className="container-fluid">
-
+        <Link to={/dashboard}></Link>
         <table className="table is-striped is-fullwidth">
           <thead>
             <tr>
