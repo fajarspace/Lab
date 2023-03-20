@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [jadwal, setJadwal] = useState([]);
@@ -13,12 +13,7 @@ const Home = () => {
     const response = await axios.get("https://labti.up.railway.app/jadwal");
     setJadwal(response.data);
   };
-//   function refreshPage() {
-//     setTimeout(()=>{
-//         window.location.reload(false);
-//     }, 500);
-//     console.log('page to reload')
-// }
+  
   // const deleteJadwal = async (id) => {
   //   try {
   //     await axios.delete(`https://labti.up.railway.app/jadwal/${id}`);
@@ -32,7 +27,7 @@ const Home = () => {
     <>
     <section>
       <div className="container-fluid">
-        <a href='/dashboard'> <u> dashboard</u></a>
+        <Link to={'/dashboard'}> <u> dashboard</u></Link>
         {/* <Link to={'/login'}> <u> login</u></Link>
         <Link to={'/test'}> <u> test</u></Link> */}
         <table className="table is-striped is-fullwidth">
