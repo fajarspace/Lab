@@ -3,6 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
+const jadwalUrl = process.env.REACT_APP_JADWAL_URL;
+// const urlById = `${jadwalUrl}/${id}`;
+
 const AddJadwal = () => {
   const [kelas, setKelas] = useState("");
   const [hari, setHari] = useState("");
@@ -12,11 +15,11 @@ const AddJadwal = () => {
   const [asisten2, setAsisten2] = useState("");
   
   const navigate = useNavigate();
-
+  
   const saveJadwal = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://labti.up.railway.app/jadwal", {
+      await axios.post(jadwalUrl, {
         kelas,
         hari,
         waktu,
@@ -81,7 +84,7 @@ const AddJadwal = () => {
             <option value="09:30 - 11:30">09:30 - 11:30</option>
             <option value="13:00 - 15:00">13:00 - 15:00</option>
             <option value="15:30 - 17:30">15:30 - 17:30</option>
-            <option value="18:30 - 20:00">18:00 - 20:00</option>
+            <option value="18:00 - 20:00">18:00 - 20:00</option>
             <option value="20:00 - 22:00">20:00 - 22:00</option>
 
           </select>

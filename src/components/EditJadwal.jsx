@@ -15,6 +15,9 @@ const EditJadwal = () => {
 
   const navigate = useNavigate();
 
+  const jadwalUrl = process.env.REACT_APP_JADWAL_URL;
+  const urlById = `${jadwalUrl}/${id}`;
+
   useEffect(() => {
     getJadwalById();
   }, []);
@@ -22,7 +25,7 @@ const EditJadwal = () => {
     
     e.preventDefault();
     try {
-      await axios.patch(`https://labti.up.railway.app/jadwal/${id}`, {
+      await axios.patch(urlById, {
         kelas,
         hari,
         waktu,
@@ -37,7 +40,7 @@ const EditJadwal = () => {
   };
 
   const getJadwalById = async () => {
-    const response = await axios.get(`https://labti.up.railway.app/jadwal/${id}`);
+    const response = await axios.get(urlById);
     setKelas(response.data.kelas);
     setHari(response.data.hari);
     setWaktu(response.data.waktu);

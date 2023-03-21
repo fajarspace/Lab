@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
+const jadwalUrl = process.env.REACT_APP_JADWAL_URL;
+
 const dashboard = () => {
   const [jadwal, setJadwal] = useState([]);
 
@@ -11,13 +13,18 @@ const dashboard = () => {
   }, []);
 
   const getJadwal = async () => {
-    const response = await axios.get("https://labti.up.railway.app/jadwal");
-    setJadwal(response.data);
+    try {
+      const response = await axios.get(jadwalUrl);
+      setJadwal(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const deleteJadwal = async (id) => {
+    const urlById = `${jadwalUrl}/${id}`;
     try {
-      await axios.delete(`https://labti.up.railway.app/jadwal/${id}`);
+      await axios.delete(urlById);
       getJadwal();
     } catch (error) {
       console.log(error);
