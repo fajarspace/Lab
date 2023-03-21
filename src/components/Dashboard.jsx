@@ -37,10 +37,10 @@ const dashboard = () => {
     <div className="container-fluid">
       <div className="">
         <Navbar/>
-        <table className="table is-striped is-fullwidth">
+        <table role={'grid'}>
           <thead>
             <tr>
-              <th>No</th>
+              <th scope="col">No</th>
               <th>Kelas</th>
               <th>Hari</th>
               <th>Waktu</th>

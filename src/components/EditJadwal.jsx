@@ -55,7 +55,7 @@ const EditJadwal = () => {
     <section className="container-fluid">
         <form onSubmit={updateJadwal}>
           <div className="grid">
-        <main>
+        <main className="" >
         <div className="field">
             <label className="label">Kelas</label>
             <select value={kelas} onChange={(e) => setKelas(e.target.value)}>
