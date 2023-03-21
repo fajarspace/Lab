@@ -55,10 +55,9 @@ const EditJadwal = () => {
   return (
     <>
     <Navbar/>
-    <section className="container-fluid">
+    <section className="container">
         <form onSubmit={updateJadwal}>
-          <div className="grid">
-        <main className="" >
+        <div className="card">
         <div className="field">
             <label className="label">Kelas</label>
             <select value={kelas} onChange={(e) => setKelas(e.target.value)}>
@@ -110,8 +109,6 @@ const EditJadwal = () => {
               </div>
             </div>
           </div>
-          </main>
-          <main>
           <div className="field">
             <label className="label">Dosen</label>
             <div className="control">
@@ -168,8 +165,6 @@ const EditJadwal = () => {
             </select>
             </div>
           </div>
-          </main>
-          
           </div>
           <main>
             <button style={{width:"200px"}} role={'button'} type="submit">
