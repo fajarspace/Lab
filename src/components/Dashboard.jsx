@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import { BsTrash3 } from "react-icons/bs";
+import { FiEdit } from "react-icons/fi";
 
 const jadwalUrl = process.env.REACT_APP_JADWAL_URL;
 
@@ -32,8 +34,8 @@ const dashboard = () => {
   };
 
   return (
-    <div className="columns mt-5 is-centered">
-      <div className="column is-half">
+    <div className="container-fluid">
+      <div className="">
         <Navbar/>
         <table className="table is-striped is-fullwidth">
           <thead>
@@ -63,18 +65,18 @@ const dashboard = () => {
                     to={`jadwal/edit/${jadwal.id}`}
                     className="button is-small is-info mr-2"
                   >
-                    <kbd style={{"backgroundColor":'yellow', "color":"black"}}>Edit</kbd>
-                  </Link>
-                  <br />
+                    <kbd style={{"backgroundColor":'yellow', "color":"black", fontSize:"20px"}}><FiEdit/></kbd>
+                  </Link> &nbsp;
+             
                   <Link
-  onClick={() => {
-    if (window.confirm("Apakah Anda yakin ingin menghapus jadwal ini?")) {
-      deleteJadwal(jadwal.id);
-    }
-  }}
->
-  <kbd style={{ backgroundColor: "red" }}>Hapus</kbd>
-</Link>
+                    onClick={() => {
+                      if (window.confirm("Apakah Anda yakin ingin menghapus jadwal ini?")) {
+                        deleteJadwal(jadwal.id);
+                      }
+                    }}
+                  >
+                    <kbd style={{ backgroundColor: "red", fontSize:"20px" }}><BsTrash3/></kbd>
+                  </Link>
 
                 </td>
               </tr>
