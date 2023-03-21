@@ -67,10 +67,15 @@ const dashboard = () => {
                   </Link>
                   <br />
                   <Link
-                    onClick={() => deleteJadwal(jadwal.id)}
-                  >
-                    <kbd style={{"backgroundColor":'red'}}>Hapus</kbd>
-                  </Link>
+  onClick={() => {
+    if (window.confirm("Apakah Anda yakin ingin menghapus jadwal ini?")) {
+      deleteJadwal(jadwal.id);
+    }
+  }}
+>
+  <kbd style={{ backgroundColor: "red" }}>Hapus</kbd>
+</Link>
+
                 </td>
               </tr>
             ))}

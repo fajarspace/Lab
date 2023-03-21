@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import { Link } from "react-router-dom";
 
+const jadwalUrl = process.env.REACT_APP_JADWAL_URL;
+
 const Home = () => {
   const [jadwal, setJadwal] = useState([]);
 
@@ -10,7 +12,7 @@ const Home = () => {
   }, []);
 
   const getJadwal = async () => {
-    const response = await axios.get("https://labti.up.railway.app/jadwal");
+    const response = await axios.get(jadwalUrl);
     setJadwal(response.data);
   };
   
