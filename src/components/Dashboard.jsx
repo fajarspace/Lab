@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import { BsTrash3 } from "react-icons/bs";
+import { IoMdTrash } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
 
 const jadwalUrl = process.env.REACT_APP_JADWAL_URL;
@@ -71,11 +71,12 @@ const dashboard = () => {
                   <Link
                     onClick={() => {
                       if (window.confirm("Apakah Anda yakin ingin menghapus jadwal ini?")) {
+                        window.alert('Hapus jadwal berhasil!')
                         deleteJadwal(jadwal.id);
                       }
                     }}
                   >
-                    <kbd style={{ backgroundColor: "red", fontSize:"20px" }}><BsTrash3/></kbd>
+                    <kbd style={{ backgroundColor: "red", fontSize:"20px" }}><IoMdTrash/></kbd>
                   </Link>
 
                 </td>

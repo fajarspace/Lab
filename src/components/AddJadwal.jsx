@@ -142,7 +142,7 @@ const AddJadwal = () => {
       </main>
       </div>
       <div className="field">
-        <button type="submit" className="button is-success">
+      <button style={{width:"200px"}} role={'button'} type="submit">
           Tambah jadwal
         </button>
       </div>

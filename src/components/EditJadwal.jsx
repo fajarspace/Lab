@@ -156,12 +156,13 @@ const EditJadwal = () => {
             </div>
           </div>
           </main>
+          
           </div>
-          <div className="field">
-            <button type="submit" className="button is-success">
+          <main>
+            <button style={{width:"200px"}} role={'button'} type="submit">
               Update
             </button>
-          </div>
+          </main>
         </form>
     </section>
     </>
