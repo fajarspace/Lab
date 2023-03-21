@@ -47,6 +47,7 @@ const dashboard = () => {
               <th>Dosen</th>
               <th>Asisten</th>
               <th>Asisten</th>
+              <th>Praktikum</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -60,6 +61,7 @@ const dashboard = () => {
                 <td>{jadwal.dosen}</td>
                 <td>{jadwal.asisten1}</td>
                 <td>{jadwal.asisten2}</td>
+                <td>{jadwal.praktikum}</td>
                 <td>
                   <Link
                     to={`jadwal/edit/${jadwal.id}`}
@@ -78,7 +80,6 @@ const dashboard = () => {
                   >
                     <kbd style={{ backgroundColor: "red", fontSize:"20px" }}><IoMdTrash/></kbd>
                   </Link>
-
                 </td>
               </tr>
             ))}

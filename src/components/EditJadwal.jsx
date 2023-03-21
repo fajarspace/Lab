@@ -11,6 +11,7 @@ const EditJadwal = () => {
   const [dosen, setDosen] = useState("");
   const [asisten1, setAsisten1] = useState("");
   const [asisten2, setAsisten2] = useState("");
+  const [praktikum, setPraktikum] = useState("");
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -31,7 +32,8 @@ const EditJadwal = () => {
         waktu,
         dosen,
         asisten1,
-        asisten2
+        asisten2,
+        praktikum
       });
       navigate("/dashboard");
     } catch (error) {
@@ -47,6 +49,7 @@ const EditJadwal = () => {
     setDosen(response.data.dosen);
     setAsisten1(response.data.asisten1);
     setAsisten2(response.data.asisten2);
+    setPraktikum(response.data.praktikum);
   };
 
   return (
@@ -152,6 +155,16 @@ const EditJadwal = () => {
               <option value="M. Romdhon">M. Romdhon</option>
               <option value="Sultan Aditya">Sultan Aditya</option>
 
+            </select>
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Praktikum</label>
+            <div className="control">
+            <select value={praktikum} onChange={(e) => setPraktikum(e.target.value)}>
+            <option value="">Pilih Praktikum</option>
+              <option value="Bahasa Pemrograman">Bahasa Pemrograman</option>
+              <option value="Data Mining">Data Mining</option>
             </select>
             </div>
           </div>

@@ -42,6 +42,7 @@ const Home = () => {
               <th>Dosen</th>
               <th>Asisten</th>
               <th>Asisten</th>
+              <th>Praktikum</th>
             </tr>
           </thead>
           <tbody>
@@ -54,6 +55,7 @@ const Home = () => {
                 <td>{jadwal.dosen}</td>
                 <td>{jadwal.asisten1}</td>
                 <td>{jadwal.asisten2}</td>
+                <td>{jadwal.praktikum}</td>
               </tr>
             ))}
           </tbody>
