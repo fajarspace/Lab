@@ -58,6 +58,10 @@ const EditJadwal = () => {
     <section className="container">
         <form onSubmit={updateJadwal}>
         <div className="card">
+          <hgroup>
+            <h1>Update jadwal</h1>
+            <h2>update</h2>
+          </hgroup>
         <div className="field">
             <label className="label">Kelas</label>
             <select value={kelas} onChange={(e) => setKelas(e.target.value)}>

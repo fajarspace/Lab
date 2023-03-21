@@ -41,6 +41,10 @@ const AddJadwal = () => {
     <section className="container">
     <form onSubmit={saveJadwal}>
     <div className="card">
+      <hgroup>
+        <h1>Tambah jadwal</h1>
+        <h2>tambah</h2>
+      </hgroup>
         <div className="field">
             <label className="label">Kelas</label>
             <select value={kelas} onChange={(e) => setKelas(e.target.value)}>
